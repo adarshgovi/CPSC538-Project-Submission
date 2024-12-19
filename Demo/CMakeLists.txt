@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.13)
 
 # Pull in SDK (must be before project)
-set(PICO_SDK_PATH "<path_to>/freertos-pico/pico-sdk")
-set(FREERTOS_KERNEL_PATH "<path_to>/FreeRTOS-Kernel")
-include("<path_to>/pico-sdk/external/pico_sdk_import.cmake")
+set(PICO_SDK_PATH "C:/Users/Adarsh/Desktop/Classes/CPSC 538G/freertos-pico/pico-sdk")
+set(FREERTOS_KERNEL_PATH "C:/Users/Adarsh/Desktop/Classes/CPSC 538G/freertos-pico/FreeRTOS-Kernel")
+include("C:/Users/Adarsh/Desktop/Classes/CPSC 538G/freertos-pico/pico-sdk/external/pico_sdk_import.cmake")
 
 # Pull in FreeRTOS
-include("<path_to>/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/FreeRTOS_Kernel_import.cmake")
+include("C:/Users/Adarsh/Desktop/Classes/CPSC 538G/freertos-pico/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/FreeRTOS_Kernel_import.cmake")
 
 project(app C CXX ASM)
 set(CMAKE_C_STANDARD 11)

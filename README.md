@@ -45,7 +45,6 @@ The `xTaskCreateEDF` function creates a task with EDF (Earliest Deadline First) 
         const char * const pcName,
         const uint16_t usStackDepth,
         void * const pvParameters,
-        const UBaseType_t uxPriority,
         TaskHandle_t * const pxCreatedTask,
         const TickType_t xTaskPeriod,
         const TickType_t xTaskDeadline
@@ -57,7 +56,6 @@ The `xTaskCreateEDF` function creates a task with EDF (Earliest Deadline First) 
 - `pcName`: A descriptive name for the task (useful for debugging and monitoring).
 - `usStackDepth`: The size of the task's stack in words.
 - `pvParameters`: Pointer to the parameters to be passed to the task function.
-- `uxPriority`:	Priority of the task. This determines the scheduling order for tasks with the same deadline.
 - `pxCreatedTask`: Pointer to the handle of the created task.
 - `xTaskPeriod`: Period of the task (in ticks). Defines how often the task repeats.
 - `xTaskDeadline`: Relative deadline (in ticks) for the task.
@@ -89,7 +87,6 @@ int main(void)
         "EDF_Task",              // Task name
         configMINIMAL_STACK_SIZE,// Stack size
         (void *)20,              // Task parameters (e.g., execution time in ms)
-        2,                       // Task priority
         &xTaskHandle,            // Task handle
         pdMS_TO_TICKS(100),      // Task period: 100 ms
         pdMS_TO_TICKS(100)       // Task deadline: 100 ms
